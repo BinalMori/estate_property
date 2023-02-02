@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="report_view_form" model="ir.ui.view">
+        <field name="name">report.demo.form</field>
+        <field name="model">report</field>
+        <field name="arch" type="xml">
+            <form string="reportform">
+                <group class="oe_title">
+                    <field name="Date_From"/>
+                    <field name="Date_To"/>
+                </group>
+                <footer>
+                    <button name="print_report" type="object" string="print"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="report_action" model="ir.actions.act_window">
+        <field name="name">report demo</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">report</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="report_view_form"/>
+        <field name="target">new</field>
+    </record>
+</odoo>

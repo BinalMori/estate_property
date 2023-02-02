@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+
+<odoo>
+    <record id="estate_type_action" model="ir.actions.act_window">
+        <field name="name">property type</field>
+        <field name="res_model">estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="estate_offer_action" model="ir.actions.act_window">
+        <field name="name">offer</field>
+        <field name="res_model">estate.property.offer</field>
+        <field name="view_mode">tree,form</field>
+         <field name="domain">[('property_type_id', '=', active_id)]</field>
+        <field name="context">{'search_default_available':True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                ADD PROPERTIES
+            </p>
+        </field>
+    </record>
+
+    <record id="estate_property_type_view_tree" model="ir.ui.view">
+        <field name="name">estate.property.type.tree</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+
+            <tree>
+                <field name="sequence" widget="handle"/>
+                <field name="property_no"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="estate_property_type_form" model="ir.ui.view">
+        <field name="name">estate.property.type.form</field>
+        <field name="model">estate.property.type</field>
+        <field name="arch" type="xml">
+            <form string="Test">
+                <sheet>
+                    <div class="oe_button_box">
+                        <button class="oe_stat_button" type="action" name="%(estate.estate_offer_action)d" icon="fa-usd">
+                            <field string="offer" name="offer_count" widget="statinfo" />
+                        </button>
+                    </div>
+                    <field name="property_no"/>
+                        <h1><field name="name"/></h1>
+                    <group>
+                        <field name="highest_price" string="Highest Price"/>
+                    </group>
+                        <notebook>
+                        <page  string="Properties">
+                            <field name="property_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="expected_price"/>
+                                <field name="state"/>
+                            </tree>
+                            </field>
+                        </page>
+                        </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

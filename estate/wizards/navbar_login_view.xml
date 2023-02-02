@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<odoo>
+    <record id="login_view_form" model="ir.ui.view">
+        <field name="name">login_form</field>
+        <field name="model">navbar.login</field>
+        <field name="arch" type="xml">
+            <form string="login_form">
+                <sheet>
+                    <group>
+                        <field name="username"/>
+                        <field name="password"/>
+                    </group>
+                     <footer>
+                        <button name="login" type="object" string="login"/>
+                        <button string="Cancel" class="btn-secondary" special="cancel" data-hotkey="z"/>
+                   </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+        <record id="nav_login_action" model="ir.actions.act_window">
+        <field name="name">nav_login</field>
+        <field name="res_model">navbar.login</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="login_view_form"/>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

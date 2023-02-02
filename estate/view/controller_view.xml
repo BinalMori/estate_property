@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="estate_data" name="Estate Details">
+        <t t-call="website.layout">
+            <div class="oe_structure">
+                <div class="container"><br />
+                    <center>
+                        <h3>Estate Details</h3>
+                    </center><br />
+                    <table class="table-striped table">
+                        <thead style="font-size: 23px;">
+                            <tr>
+                                <h6><b>
+                                        <th>Property Id</th>
+                                        <th>Property Name</th>
+                                        <th>Date Available</th>
+                                        <th>Selling Price</th>
+                                    </b></h6>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-foreach="records" t-as="property">
+                                <tr>
+                                    <td><span t-esc="property.property_no" /></td>
+                                    <td><span t-esc="property.name" /></td>
+                                    <td><span t-esc="property.date_availability" /></td>
+                                    <td><span t-esc="property.selling_price" /></td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

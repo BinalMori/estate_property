@@ -1,0 +1,14 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_estate_property_tag,access_estate_property_tag,model_estate_property_tag,base.group_user,1,1,1,1
+access_estate_property,access_estate_property,model_estate_property,base.group_user,1,1,1,1
+access_estate_property_type,access_estate_property_type,model_estate_property_type,base.group_user,1,1,1,1
+access_estate_property_offer,access_estate_property_offer,model_estate_property_offer,base.group_user,1,1,1,1
+access_wizard,access_wizard,model_wizard,base.group_user,1,1,1,1
+access_import_data,access_import_data,model_import_data,base.group_user,1,1,1,1
+access_report,access_report,model_report,base.group_user,1,1,1,1
+access_estate_manager,access_estate_manager,model_estate_detail,base.group_user,1,1,1,1
+access_rejected_email,access_rejected_email,model_rejected_email,base.group_user,1,1,1,1
+access_account_move1,access_account_move1,model_account_move,estate.group_invoice_manager,1,1,1,1
+access_account_move_demo,access_account_move_demo,model_account_move,estate.group_invoice_ass,1,0,0,0
+access_navbar,access_navbar,model_navbar_login,base.group_user,1,1,1,1
+access_contact_form,access_contact_form,model_contact_form,base.group_user,1,1,1,1

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<odoo>
+
+    <menuitem id="estate_menu_root" name="Real Estate"/>
+        <menuitem id="property_first_level_menu" name="Property" parent="estate_menu_root"/>
+            <menuitem id="estate_property_model_menu_action" action="estate_property_action" parent="property_first_level_menu"/>
+                <menuitem id="import_data_model_menu_action" action="import_data_action" parent="property_first_level_menu"/>
+
+        <menuitem id="property_type_first_level_menu" name="Type/Tag" parent="estate_menu_root"/>
+            <menuitem id="estate_type_model_menu_action"  action="estate_type_action" parent="property_type_first_level_menu"/>
+                <menuitem id="estate_tag_model_menu_action" action="estate_tag_action" parent="property_type_first_level_menu"/>
+                    <menuitem id="wizard_menu_action" action="wizard_action" parent="property_first_level_menu"/>
+
+        <menuitem id="property_report_menu" name="Report" parent="estate_menu_root"/>
+            <menuitem id="estate_report_menu_action" action="report_action" parent="property_report_menu"/>
+
+        <menuitem id="estate_detail_menu" name="Details" parent="estate_menu_root"/>
+            <menuitem id="estate_detail_menu_action" action="estate_detail_action" parent="estate_detail_menu"/>
+                <menuitem id="contact_form_menu_action" action="contact_form_action" parent="estate_detail_menu"/>
+
+</odoo>

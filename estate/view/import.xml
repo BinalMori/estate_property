@@ -1,0 +1,11 @@
+ <record id="estate_property_view_form" model="ir.ui.view">
+        <field name="name">estate.form</field>
+        <field name="model">base_import.import</field>
+        <field name="arch" type="xml">
+            <form string="import">
+                <header>
+                    <button name="import_data" type="object"/>
+                </header>
+            </form>
+        </field>
+ </record>

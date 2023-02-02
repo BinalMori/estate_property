@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="inventory_move_form" model="ir.ui.view">
+        <field name="name">stock.move.form</field>
+        <field name="model">stock.quant</field>
+        <field name="inherit_id" ref="stock.view_stock_quant_tree_inventory_editable"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='quantity']" position="after" >
+                   <field name="a" invisible="True"/>
+                   <field name="b" invisible="True"/>
+                   <field name="button_visible" invisible="True"/>
+                   <field name="button" invisible="True"/>
+            </xpath>
+             <xpath expr="//button[@name='action_inventory_history']" position="before" >
+                 <button name="Approved_Inventory" type="object" class="btn btn-link text-info" icon="fa-check" string="Approved" attrs="{'invisible': ['|',('button_visible', '=', True),('button', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
+
+<!--   <xpath expr="//field[@name='quantity']" position="after" >-->
+<!--                  <field name="a" invisible="True"/>-->
+<!--            </xpath>-->
+<!--            <xpath expr="//field[@name='quantity']" position="after" >-->
+<!--                 <field name="b" invisible="True"/>-->
+<!--            </xpath>-->

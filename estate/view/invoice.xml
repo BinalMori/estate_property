@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<data>
+    <record id="view1_move_form" model="ir.ui.view">
+        <field name="name">account1.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_post']" position="before">
+                <button name="submit" string="submit" type="object" class="oe_highlight" data-hotkey="s"  states="draft,posted"/>
+            </xpath>
+            <xpath expr="//button[@name='action_post']" position="before">
+                <button name="approved" string="approved" type="object" class="oe_highlight" data-hotkey="a"  states="submit" groups="estate.group_invoice_manager"/>
+            </xpath>
+            <xpath expr="//button[@name='action_post']" position="after">
+                <button name="reject" string="reject" type="object" class="oe_highlight" data-hotkey="r" states="submit" groups="estate.group_invoice_manager"/>
+<!--                <button name="%(rejected_email_wizard_action)d" string="reject" type="action" class="oe_highlight" data-hotkey="v" state="draft,reject"/>-->
+            </xpath>
+            <xpath expr="//field[@name='invoice_date']" position="after">
+                <field name="reason" string="reason"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="replace">
+                <field name="state" widget="statusbar" statusbar_visible="draft,submit,approved,rejected"/>
+            </xpath>
+        </field>
+    </record>
+    </data>
+</odoo>
