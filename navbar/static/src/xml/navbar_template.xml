@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates>
+  <t t-name="LoginNav">
+      <div class="new_icon">
+             <div class="icon_div">
+                 <div class="toggle-icon" role="button">
+                     <i id='create_so' class="fa fa-flickr" role="img" aria-label="login_nav"/>
+                 </div>
+             </div>
+      </div>
+  </t>
+</templates>
